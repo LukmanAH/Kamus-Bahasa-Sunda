@@ -18,14 +18,16 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import SIZES,{API, ColorPrimary} from './utils/constanta';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 function App(){
     const [text, setText] = useState('');
 
-    const [result, setResult] = useState();
+    const [result, setResult] = useState([]);
 
     const searchWord = async () => {
-        await fetch('https://hibersunda-production.up.railway.app/undakusukbasa/'+text, {
+        await fetch(API+text, {
           method: 'GET',
           headers: {
             Accept: 'application/json',
@@ -74,44 +76,55 @@ function App(){
     // );
 
     const Item = ({data}) => (
-      <View style={{flex:1, margin: 5, backgroundColor:'white'}}>
-        <View style={{flex:1, flexDirection:'row', justifyContent:'space-between', margin: 15}}>
-          <Text style={{color:'black', margin:5}}>{data.loma}</Text>
-          <Text style={{color:'black', margin:5}}>{data.bindo}</Text>
-        </View>
+      <View style={{flex:1, padding:10, borderBottomColor:ColorPrimary, borderBottomWidth:1}}>
+        {/* <View style={{flex:1, flexDirection:'row', justifyContent:'space-between'}}> */}
+          <Text style={{color:ColorPrimary, marginLeft:5, fontSize:24,}}>{data.loma}</Text>
+          <Text style={{color:'black', marginLeft:5, fontSize:16,}}>{data.bindo}</Text>
+        {/* </View> */}
       </View>
   );
     
-
+   
     useEffect(()=>{
         searchWord();
     },[])
 
   return (
       <View style={styles.container}>
-            <Text>Kamus Bahasa Sunda</Text>
-            <View style={{flexDirection:'row', margin: 15, alignItems:'center', justifyContent:'center'}}>
+          <View style={{height:SIZES.height/4, justifyContent:'center', alignItems:'center'}}>
+            <View style={{flex:2, marginTop:20, justifyContent:'center'}}>
+              <Text style={{fontSize:30}}>Kamus Bahasa Sunda</Text>
+            </View>
+            <View style={{flexDirection:'row', margin: 15,backgroundColor:'white', height: 50, width:SIZES.width*0.93, alignItems:'center', justifyContent:'center'}}>
+              <Icon name="rocket" size={30} color="#900" />
               <TextInput
                   maxLength={40}
                   onChangeText={text => setText(text)}
+                  onChange={searchWord}
                   value={text}
-                  style={{padding: 10, backgroundColor:'white', height: 50, width:250, color:'black'}}
+                  placeholder="Input kata (bahasa indonesia/sunda/inggris)"
+                  placeholderTextColor={'#b2bec3'}
+                  style={{padding: 10, backgroundColor:'white', height: 50, width:SIZES.width*0.93-30, color:'black'}}
               />
 
-              <TouchableOpacity
+              {/* <TouchableOpacity
                 onPress={searchWord}
-                style={{backgroundColor:'blue',width:90, height: 50, justifyContent:'center', alignItems:'center'}}>
+                style={{backgroundColor:'blue',width:SIZES.width/5, height: 50, justifyContent:'center', alignItems:'center'}}>
                   <Text>Cari</Text>
-              </TouchableOpacity>
+              </TouchableOpacity> */}
               </View>
+          </View>
             
-
-            <FlatList
-                    data={result}
-                    renderItem={({item}) => <Item data={item} />}
-                    showsHorizontalScrollIndicator={false}
-                    horizontal={false}
-            />
+         
+          <FlatList
+              data={result[0]? result : [{loma:'Data Tidak Ditemukan', bindo:'Silahkan tanyakan pada orang sunda di sekitar anda.'}]}
+              renderItem={({item}) => <Item data={item} />}
+              showsHorizontalScrollIndicator={false}
+              horizontal={false}  
+              style={{flex:3, backgroundColor:'white'}}
+          />
+          
+          
             
             
 
@@ -123,7 +136,7 @@ function App(){
 const styles = StyleSheet.create({
   container:{
     flex:1,
-    backgroundColor: '#00b894',
+    backgroundColor: ColorPrimary,
   },
   HeadStyle: { 
     height: 50,

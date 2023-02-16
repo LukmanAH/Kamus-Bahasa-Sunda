@@ -4,7 +4,7 @@
             "outputFile": "com.kamusbahasasunda.app-mergeDebugResources-20:/values/values.xml",
             "map": [
                 {
-                    "source": "/home/lukmanhxm/rn/KamusBahasaSunda/android/app/build/generated/res/resValues/debug/values/gradleResValues.xml",
+                    "source": "/home/lukmanhxm/rn/Kamus-Bahasa-Sunda/android/app/build/generated/res/resValues/debug/values/gradleResValues.xml",
                     "from": {
                         "startLines": "6,8",
                         "startColumns": "4,4",
@@ -114,25 +114,6 @@
                     }
                 },
                 {
-                    "source": "/home/lukmanhxm/rn/KamusBahasaSunda/android/app/src/main/res/values/styles.xml",
-                    "from": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "54",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "267"
-                    },
-                    "to": {
-                        "startLines": "387",
-                        "startColumns": "4",
-                        "startOffsets": "26966",
-                        "endLines": "390",
-                        "endColumns": "12",
-                        "endOffsets": "27144"
-                    }
-                },
-                {
                     "source": "/home/lukmanhxm/.gradle/caches/transforms-3/872347ca18edf42f726b40efc9fc01d0/transformed/lifecycle-runtime-2.4.0/res/values/values.xml",
                     "from": {
                         "startLines": "2",
@@ -147,23 +128,6 @@
                         "startOffsets": "17774",
                         "endColumns": "42",
                         "endOffsets": "17812"
-                    }
-                },
-                {
-                    "source": "/home/lukmanhxm/rn/KamusBahasaSunda/android/app/src/main/res/values/strings.xml",
-                    "from": {
-                        "startLines": "1",
-                        "startColumns": "4",
-                        "startOffsets": "16",
-                        "endColumns": "53",
-                        "endOffsets": "65"
-                    },
-                    "to": {
-                        "startLines": "317",
-                        "startColumns": "4",
-                        "startOffsets": "20453",
-                        "endColumns": "53",
-                        "endOffsets": "20502"
                     }
                 },
                 {
@@ -200,6 +164,23 @@
                         "startOffsets": "17871",
                         "endColumns": "49",
                         "endOffsets": "17916"
+                    }
+                },
+                {
+                    "source": "/home/lukmanhxm/rn/Kamus-Bahasa-Sunda/android/app/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "16",
+                        "endColumns": "53",
+                        "endOffsets": "65"
+                    },
+                    "to": {
+                        "startLines": "317",
+                        "startColumns": "4",
+                        "startOffsets": "20453",
+                        "endColumns": "53",
+                        "endOffsets": "20502"
                     }
                 },
                 {
@@ -253,6 +234,25 @@
                         "startOffsets": "20370",
                         "endColumns": "82",
                         "endOffsets": "20448"
+                    }
+                },
+                {
+                    "source": "/home/lukmanhxm/rn/Kamus-Bahasa-Sunda/android/app/src/main/res/values/styles.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "54",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "267"
+                    },
+                    "to": {
+                        "startLines": "387",
+                        "startColumns": "4",
+                        "startOffsets": "26966",
+                        "endLines": "390",
+                        "endColumns": "12",
+                        "endOffsets": "27144"
                     }
                 },
                 {
