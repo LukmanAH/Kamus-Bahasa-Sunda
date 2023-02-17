@@ -22,15 +22,22 @@ import {
 } from 'react-native';
 import SIZES,{API, ColorPrimary} from './utils/constanta';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function App(){
     const [text, setText] = useState('');
     const [result, setResult] = useState([]);
+    const [filteredResult, setFilteredResult] = useState([])
     const [modalVisible, setModalVisible] = useState(false);
     const [dataModal, setDataModal] = useState('')
 
-    const searchWord = async () => {
-        await fetch(API+text, {
+    const getWords = async () => {
+      if(await AsyncStorage.getItem('words')){
+        const value = await AsyncStorage.getItem('words');
+        setResult(JSON.parse(value));
+        setFilteredResult(JSON.parse(value));
+      }else{
+        await fetch(API, {
           method: 'GET',
           headers: {
             Accept: 'application/json',
@@ -39,13 +46,36 @@ function App(){
         })
           .then(response => response.json())
           .then(responseJson => {
-            if(text == ''){
-            setResult(responseJson.words);
-            }else{
-              setResult(responseJson);
-            }
+              AsyncStorage.setItem('words', JSON.stringify(responseJson.words));
+              setResult(responseJson.words);
+              setFilteredResult(responseJson.words);
         });
+      }
+        
     }
+
+    const searchFilter = () => {
+      if (text) {
+        const newData = result.filter(
+          function (item) {
+            const itemData1 = item.bindo? item.bindo.toUpperCase():''.toUpperCase();
+            const itemData2 = item.english? item.english.toUpperCase():''.toUpperCase();
+            const itemData3 = item.loma? item.loma.toUpperCase():''.toUpperCase();
+
+            const textData = text.toUpperCase();
+      
+            return itemData1.indexOf(textData) > -1 || 
+                   itemData2.indexOf(textData) > -1 || 
+                   itemData3.indexOf(textData) > -1 ;
+        });
+
+        setFilteredResult(newData);
+      } else {
+        // Inserted text is blank
+        // Update FilteredDataSource with masterDataSource
+        setFilteredResult(result);
+      }
+    };
 
 
     // const Item = ({data}) => (
@@ -57,7 +87,7 @@ function App(){
       <View style={{flex:1, padding:10,}}>
         {/* <View style={{flex:1, flexDirection:'row', justifyContent:'space-between'}}> */}
           <Text style={{color:ColorPrimary, marginLeft:5, fontSize:24,}}>{data.loma}</Text>
-          <Text style={{color:'black', marginLeft:5, fontSize:16,}}>{data.bindo}</Text>
+          <Text style={{color:'black', marginLeft:5, fontSize:16,}}>{data.bindo}  -  {data.english}</Text>
         {/* </View> */}            
       </View>
 
@@ -80,7 +110,7 @@ function App(){
     
    
     useEffect(()=>{
-        searchWord();
+        getWords();
     },[])
 
   return (
@@ -94,8 +124,8 @@ function App(){
               <TextInput
                   maxLength={40}
                   onChangeText={text => setText(text)}
-                  onChange={searchWord}
-                  onEndEditing={searchWord}
+                  onChange={searchFilter}
+                  onEndEditing={searchFilter}
                   value={text}
                   placeholder="Input kata (bahasa indonesia/sunda/inggris)"
                   placeholderTextColor={'#b2bec3'}
@@ -105,7 +135,7 @@ function App(){
           </View>
           
           <FlatList
-              data={result[0]? result : [{loma:'Data Tidak Ditemukan', bindo:'Silahkan tanyakan pada orang sunda di sekitar anda.'}]}
+              data={filteredResult[0]? filteredResult : [{loma:'Data Tidak Ditemukan', bindo:'Silahkan tanyakan pada orang sunda di sekitar anda.'}]}
               renderItem={({item}) => <Item data={item} />}
               showsHorizontalScrollIndicator={false}
               horizontal={false}  
