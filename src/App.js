@@ -91,19 +91,22 @@ function App(){
         {/* </View> */}            
       </View>
 
-      <TouchableOpacity
-        onPress={() => {
-          setModalVisible(true);
-          setDataModal({
-            loma : data.loma,
-            batur : data.batur,
-            sorangan : data.sorangan,
-            bindo : data.bindo,
-            english : data.english,
-          })
-          }}>
-        <Text style={styles.textStyle}>Lihat Detail</Text>
-      </TouchableOpacity>
+      {data.loma != 'Data Tidak Ditemukan'?
+        <TouchableOpacity
+          onPress={() => {
+            setModalVisible(true);
+            setDataModal({
+              loma : data.loma,
+              batur : data.batur,
+              sorangan : data.sorangan,
+              bindo : data.bindo,
+              english : data.english,
+            })
+            }}>
+          <Text style={styles.textStyle}>Lihat Detail</Text>
+        </TouchableOpacity>:null
+      }
+      
 
       </View>
   );
@@ -179,56 +182,51 @@ function App(){
                 </TouchableOpacity>
               </View>
             </View>
-          </Modal>
-          
-            
-            
-
-           
+          </Modal>           
       </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container:{
-    flex:1,
-    backgroundColor: ColorPrimary,
-  },
-  HeadStyle: { 
-    height: 50,
-    alignContent: "center",
-    backgroundColor: 'black'
-  },
-  TableText: { 
-    margin: 10
-  },
-  centeredView: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 22,
-  },
-  modalView: {
-    justifyContent:'space-between',
-    width:SIZES.width-50,
-    height:SIZES.height/2,
-    backgroundColor: 'white',
-    padding: 20,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
+    container:{
+      flex:1,
+      backgroundColor: ColorPrimary,
     },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
+    HeadStyle: { 
+      height: 50,
+      alignContent: "center",
+      backgroundColor: 'black'
     },
+    TableText: { 
+      margin: 10
+    },
+    centeredView: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginTop: 22,
+    },
+    modalView: {
+      justifyContent:'space-between',
+      width:SIZES.width-50,
+      height:SIZES.height/2,
+      backgroundColor: 'white',
+      padding: 20,
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 4,
+      elevation: 5,
+      },
 
     button: {
       borderRadius: 20,
       padding: 10,
       elevation: 2,
-    },
+    },  
    
     buttonClose: {
       backgroundColor: '#2196F3',
