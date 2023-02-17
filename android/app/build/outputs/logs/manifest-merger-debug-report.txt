@@ -8,6 +8,7 @@ MERGED from /home/lukmanhxm/rn/Kamus-Bahasa-Sunda/android/app/src/main/AndroidMa
 MERGED from [com.facebook.flipper:flipper-network-plugin:0.125.0] /home/lukmanhxm/.gradle/caches/transforms-3/46fd99bcd35c8732c89af6cd56b755ee/transformed/jetified-flipper-network-plugin-0.125.0/AndroidManifest.xml:8:1-15:12
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] /home/lukmanhxm/.gradle/caches/transforms-3/6847bf30a8ea80ba46b96229690be3a8/transformed/jetified-flipper-fresco-plugin-0.125.0/AndroidManifest.xml:8:1-15:12
 MERGED from [com.facebook.flipper:flipper:0.125.0] /home/lukmanhxm/.gradle/caches/transforms-3/9112988e20ad25c32468b7d009f10311/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:8:1-18:12
+MERGED from [:react-native-async-storage_async-storage] /home/lukmanhxm/rn/Kamus-Bahasa-Sunda/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-vector-icons] /home/lukmanhxm/rn/Kamus-Bahasa-Sunda/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.react:react-android:0.71.3] /home/lukmanhxm/.gradle/caches/transforms-3/8b07754142de06fa88289354ebe36ee0/transformed/jetified-react-android-0.71.3-debug/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/lukmanhxm/.gradle/caches/transforms-3/32b48a3a0d0ecc8d3932e4df1a52c53f/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -164,6 +165,8 @@ MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] /home/lukmanhxm
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] /home/lukmanhxm/.gradle/caches/transforms-3/6847bf30a8ea80ba46b96229690be3a8/transformed/jetified-flipper-fresco-plugin-0.125.0/AndroidManifest.xml:11:5-13:41
 MERGED from [com.facebook.flipper:flipper:0.125.0] /home/lukmanhxm/.gradle/caches/transforms-3/9112988e20ad25c32468b7d009f10311/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:11:5-13:41
 MERGED from [com.facebook.flipper:flipper:0.125.0] /home/lukmanhxm/.gradle/caches/transforms-3/9112988e20ad25c32468b7d009f10311/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:11:5-13:41
+MERGED from [:react-native-async-storage_async-storage] /home/lukmanhxm/rn/Kamus-Bahasa-Sunda/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-async-storage_async-storage] /home/lukmanhxm/rn/Kamus-Bahasa-Sunda/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-vector-icons] /home/lukmanhxm/rn/Kamus-Bahasa-Sunda/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-vector-icons] /home/lukmanhxm/rn/Kamus-Bahasa-Sunda/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-android:0.71.3] /home/lukmanhxm/.gradle/caches/transforms-3/8b07754142de06fa88289354ebe36ee0/transformed/jetified-react-android-0.71.3-debug/AndroidManifest.xml:5:5-7:41
